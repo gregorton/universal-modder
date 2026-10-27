@@ -1,14 +1,14 @@
 """Blender script: build an animated, skinned viewmodel from b3d_skin.py JSON and export FBX for Roblox.
 
 Run:
-  blender -b --factory-startup --python tools/cb2/vm_build.py -- IN.json OUT_DIR --scale 0.06
+  blender -b --factory-startup --python scripts/roblox/vm_build.py -- IN.json OUT_DIR --scale 0.06
           --tex brush=path.png [--tex ...]
 
 Space: Blitz3D is left-handed (x right, y up, z forward). Blender = (x, z, y) of Blitz, a reflection, so
 every Blitz matrix M becomes P M P with P swapping y and z. FBX export (-Z forward, Y up) then gives
-(x, y, -z) of Blitz, the same frame the OBJ pipeline (port_model.py) uploads in.
+(x, y, -z) of Blitz.
 Rotations: Blitz3D applies the conjugate of the stored quaternion (checked: only then does the
-`weaponfire` node land on the P90's muzzle, z = 17.03 against the mesh's 17.02).
+`weaponfire` node land on the gun's muzzle, z = 17.03 against the mesh's 17.02).
 
 Every node becomes a bone (so Roblox gets Bones for CameraBone, weaponfire, ...), each brush becomes its
 own skinned mesh (Roblox MeshParts take one texture and at most 20k triangles), and one action per SEQS

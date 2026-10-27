@@ -1,5 +1,5 @@
 """Blender: render frames of a vm_build.py .blend from the viewmodel camera (Blitz origin, looking +z).
-Run: blender -b FILE.blend --python tools/cb2/vm_render.py -- OUT_DIR HFOV_DEG frame [frame ...]"""
+Run: blender -b FILE.blend --python scripts/roblox/vm_render.py -- OUT_DIR HFOV_DEG frame [frame ...]"""
 import math, os, sys
 import bpy
 argv = sys.argv[sys.argv.index("--") + 1:]

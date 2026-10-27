@@ -1,9 +1,9 @@
 """Dump a Blitz3D .b3d with its skeleton, skin weights and keyframes to JSON (Blitz3D space, unconverted).
 
-b3d2obj.py keeps only the static pose; this keeps everything an animated viewmodel needs:
+Keeps everything an animated viewmodel needs, not only the static pose:
 node tree (rest pos / scale / rot as w,x,y,z), meshes (vertices, normals, uvs, triangles per brush),
-BONE weights, KEYS, ANIM and the SEQS chunk (named frame ranges, a UE/CB2 extension:
-name, first frame, last frame, flags).
+BONE weights, KEYS, ANIM and the SEQS chunk (named frame ranges, an extension some SCP: CB fork models
+carry: name, first frame, last frame, flags).
 
 Usage:
   python -I b3d_skin.py MODEL.b3d OUT.json
